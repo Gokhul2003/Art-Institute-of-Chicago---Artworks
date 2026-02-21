@@ -17,7 +17,6 @@ Built using **Vite + React + TypeScript** for high performance and scalability, 
 <p align="center">
   🔗 https://art-institute-of-chicago-artworks.vercel.app/
 </p>
----
 
 ## 🚀 Features
 
