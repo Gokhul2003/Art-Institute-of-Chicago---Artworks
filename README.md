@@ -1,73 +1,212 @@
-# React + TypeScript + Vite
+<h1 align="center">🎨 ART-TABLE — PrimeReact DataTable App</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **modern React + TypeScript web application** that displays artwork data using **PrimeReact DataTable** with advanced features like **lazy server-side pagination**, **multi-page selection**, and a **custom row selection overlay** — all wrapped in a clean, responsive UI.
 
-Currently, two official plugins are available:
+Built using **Vite + React + TypeScript** for high performance and scalability.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎥 Demo Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<h3 align="center">Artwork DataTable with Lazy Pagination & Multi-Page Selection 👇</h3>
 
-## Expanding the ESLint configuration
+<!-- Add your demo video link here -->
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- 📄 Lazy (Server-Side) Pagination  
+- 🔢 Dynamic entry counter  
+  - `Showing X to Y of Z entries`
+- ✅ Multi-row selection across multiple pages  
+- 🎯 Custom "Select N Rows" feature using OverlayPanel  
+- ⚡ Optimized performance for large datasets  
+- 🎨 Clean and responsive UI with PrimeReact  
+- 🔷 Fully typed with TypeScript  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 💻 Technologies Used
+
+### **Frontend**
+- ⚛️ **React (Vite)** — Fast modern frontend setup  
+- 🔷 **TypeScript** — Type-safe development  
+- 🎛️ **PrimeReact** — Rich UI component library  
+- 🎨 **PrimeIcons** — Icon support  
+- 🌐 **Axios** — API data fetching  
+
+---
+
+## 📂 Project Layout
+
+| Folder / File | Description |
+|---------------|-------------|
+| **src/components/** | Contains `ArtworkTable.tsx` |
+| **src/api.ts** | Axios-based API handler |
+| **src/types.ts** | TypeScript interfaces |
+| **src/App.tsx** | Root component |
+| **src/main.tsx** | Application entry point |
+| **vite.config.ts** | Vite configuration |
+| **tsconfig.json** | TypeScript configuration |
+
+---
+
+## 🧱 Project Architecture
+
+```
+ART-TABLE/
+│
+├── public/
+├── src/
+│   ├── components/
+│   │   └── ArtworkTable.tsx
+│   ├── api.ts
+│   ├── types.ts
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── index.html
+├── package.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🧾 Setup & Installation Guide
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/art-table.git
+cd art-table
 ```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+### 3️⃣ Required Packages
+
+If not installed:
+
+```bash
+npm install axios primereact primeicons
+```
+
+---
+
+### 4️⃣ Run the Application
+
+```bash
+npm run dev
+```
+
+Open 👉 http://localhost:5173
+
+---
+
+## ✨ Core Functionalities Explained
+
+### 📌 Lazy Pagination
+
+- Fetches only required page data from API  
+- Reduces memory usage  
+- Handles large datasets efficiently  
+- Uses controlled pagination with `first` state  
+
+---
+
+### 📌 Multi-Page Row Selection
+
+- Selection persists across different pages  
+- Uses efficient `Set<number>` logic  
+- Fully controlled PrimeReact `DataTable` selection  
+
+---
+
+### 📌 Custom Select Feature
+
+- OverlayPanel allows user to input number  
+- Automatically selects first **N rows** on current page  
+- Improves user control and usability  
+
+---
+
+### 📌 Entry Counter (Left of Pagination)
+
+```tsx
+paginatorLeft={
+  <div>
+    Showing {startEntry} to {endEntry} of {totalRecords} entries
+  </div>
+}
+```
+
+---
+
+## 🔌 API Handling
+
+`api.ts`
+
+```ts
+import axios from "axios";
+
+export const fetchArtworks = async (page: number, limit: number) => {
+  return axios.get(`API_URL?page=${page}&limit=${limit}`);
+};
+```
+
+---
+
+## 🔮 Future Improvements
+
+- 🔍 Global Search  
+- 📊 Column Filtering  
+- 📥 CSV Export  
+- 🌙 Dark Mode  
+- 📱 Enhanced Mobile Responsiveness  
+- 🔐 Authentication Layer  
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository  
+2. Create a feature branch  
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
+3. Commit your changes  
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push to your branch  
+
+```bash
+git push origin feature/your-feature-name
+```
+
+5. Open a Pull Request 🚀  
+
+---
+
+## 💡 Author
+
+👤 **Gokhul Kooranchi**  
+📧 thegokhul.kooranchi@gmail.com  
+🎓 MCA (Batch 2026)  
+💻 Full Stack Developer | React + TypeScript Enthusiast  
+
+> ⚙️ Built with ❤️ using React, TypeScript, PrimeReact & Vite.
