@@ -1,8 +1,8 @@
 <h1 align="center">🎨 ART-TABLE — PrimeReact DataTable App</h1>
 
-A **modern React + TypeScript web application** that displays artwork data using **PrimeReact DataTable** with advanced features like **lazy server-side pagination**, **multi-page selection**, and a **custom row selection overlay** — all wrapped in a clean, responsive UI.
+A **modern React + TypeScript web application** that displays artwork data from the **Art Institute of Chicago API** using **PrimeReact DataTable** with advanced features like **lazy server-side pagination**, **multi-page selection**, and a **custom row selection overlay** — all wrapped in a clean, responsive UI.
 
-Built using **Vite + React + TypeScript** for high performance and scalability.
+Built using **Vite + React + TypeScript** for high performance and scalability, with data fetched dynamically via the Art Institute of Chicago public REST API.
 
 ---
 
