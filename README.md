@@ -8,9 +8,15 @@ Built using **Vite + React + TypeScript** for high performance and scalability, 
 
 ## 🎥 Demo Preview
 
-<h3 align="center">Artwork DataTable with Lazy Pagination & Multi-Page Selection 👇</h3>
+<h3 align="center">
+  <a href="https://art-institute-of-chicago-artworks.vercel.app/" target="_blank">
+    🚀 Live Demo — Artwork DataTable with Lazy Pagination & Multi-Page Selection
+  </a>
+</h3>
 
-https://art-institute-of-chicago-artworks.vercel.app/
+<p align="center">
+  🔗 https://art-institute-of-chicago-artworks.vercel.app/
+</p>
 ---
 
 ## 🚀 Features
